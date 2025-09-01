@@ -35,18 +35,21 @@ export default function Stairs(props) {
       gsap.from(pageRef.current, {
         opacity: 0,
         delay: 1.3,
+        scale: 1.2
       });
     },
     [pathname]
   );
   return (
-    <div ref={stairParentRef} className="h-screen w-full fixed z-20 top-0">
-      <div className="h-full w-full flex">
-        <div className="stair h-full w-1/5 bg-black"></div>
-        <div className="stair h-full w-1/5 bg-black"></div>
-        <div className="stair h-full w-1/5 bg-black"></div>
-        <div className="stair h-full w-1/5 bg-black"></div>
-        <div className="stair h-full w-1/5 bg-black"></div>
+    <div>
+      <div ref={stairParentRef} className="h-screen w-full fixed z-20 top-0">
+        <div className="h-full w-full flex">
+          <div className="stair h-full w-1/5 bg-black"></div>
+          <div className="stair h-full w-1/5 bg-black"></div>
+          <div className="stair h-full w-1/5 bg-black"></div>
+          <div className="stair h-full w-1/5 bg-black"></div>
+          <div className="stair h-full w-1/5 bg-black"></div>
+        </div>
       </div>
       <div ref={pageRef}>{props.children}</div>
     </div>

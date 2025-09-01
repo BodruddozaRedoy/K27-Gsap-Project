@@ -27,9 +27,15 @@ export default function Agence() {
       scrollTrigger: {
         trigger: imageDivRef.current,
         // markers: true,
-        start: "top 28%",
+        start: "top 35%",
         end: "top -70%",
         pin: true,
+        pinSpacing: true,
+        pinReparent: true,
+        pinType: "transform",
+        anticipatePin: 1,
+        invalidateOnRefresh: true,
+        scrub: true,
         onUpdate: function (el) {
           // console.log(Math.floor(el.progress * imageArray.length))
           let imageIndex;
@@ -45,11 +51,11 @@ export default function Agence() {
     });
   });
   return (
-    <div>
-      <div className="section-1">
+    <div className="parent">
+      <div id="page-1" className="py-1">
         <div
           ref={imageDivRef}
-          className="h-90 w-70 absolute top-80 left-98 rounded-3xl overflow-hidden"
+          className="h-[20vw] w-[15vw] absolute top-96 left-[30vw] rounded-3xl overflow-hidden"
         >
           <img
             ref={imageRef}
@@ -59,7 +65,7 @@ export default function Agence() {
           />
         </div>
       </div>
-      <div className="section-2 h-screen">
+      <div id="page-2" className="h-screen">
         <div className="font-[font2] relative">
           <div className="mt-[55vh]">
             <h1 className="text-[20vw] uppercase leading-[18vw] text-center">
