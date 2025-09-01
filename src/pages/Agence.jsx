@@ -26,7 +26,7 @@ export default function Agence() {
     gsap.to(imageDivRef.current, {
       scrollTrigger: {
         trigger: imageDivRef.current,
-        markers: true,
+        // markers: true,
         start: "top 28%",
         end: "top -70%",
         pin: true,
