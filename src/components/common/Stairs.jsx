@@ -42,7 +42,7 @@ export default function Stairs(props) {
   );
   return (
     <div>
-      <div ref={stairParentRef} className="h-screen w-full fixed z-20 top-0">
+      <div ref={stairParentRef} className="h-screen w-full fixed z-20 top-0 overflow-x-hidden overflow-y-hidden">
         <div className="h-full w-full flex">
           <div className="stair h-full w-1/5 bg-black"></div>
           <div className="stair h-full w-1/5 bg-black"></div>

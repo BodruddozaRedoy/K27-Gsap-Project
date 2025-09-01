@@ -1,7 +1,17 @@
-import React from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 
 export default function Navbar() {
+    const overlayRef = useRef(null)
+    // useGSAP(function(){
+    //     gsap.from(overlayRef.current, {
+    //         height: 0,
+    //         delay: 1.3,
+            
+    //     })
+    // })
   return (
     <div className="flex items-start justify-between fixed top-0 w-full bg-transparent z-40 left-0 ">
       <Link to={"/"} className="p-5">
@@ -18,17 +28,18 @@ export default function Navbar() {
           ></path>
         </svg>
       </Link>
-      <div className="h-16 w-[16vw] relative">
+      <div onMouseEnter={() => {overlayRef.current.style.height = "100%"}} onMouseLeave={() => {overlayRef.current.style.height = "0%"}} className="h-16 w-[16vw] relative bg-white">
         <div className="bg-black h-full w-full">
-        <button>
-          <svg role="presentation" className="text-white" alt="">
-            <use className="text-white" xlink:href="assets/images/sprite.svg#burger"></use>
-          </svg>
-        </button>
-        <div className="bg-green-500 h-full w-full absolute top-0 left-0">
-
+          <button>
+            {/* <svg role="presentation" className="text-white" alt="">
+              <use
+                className="text-white"
+                xlink:href="assets/images/sprite.svg#burger"
+              ></use>
+            </svg> */}
+          </button>
         </div>
-      </div>
+          <div ref={overlayRef} className="bg-green-500 w-full absolute top-0 left-0 transition-all"></div>
       </div>
     </div>
   );
